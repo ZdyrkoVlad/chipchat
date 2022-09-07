@@ -1,0 +1,17 @@
+.example-container {
+  height: 100vh;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.example-sidenav-content {
+  position: fixed;
+  top:10px;
+  left:10px;
+  z-index: 10;
+  align-items: center;
+  justify-content: center;
+}
+
+.example-sidenav {
+  padding: 20px;
+}

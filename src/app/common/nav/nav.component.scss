@@ -1,0 +1,15 @@
+.nav-link{
+  font-size: 18px;
+  font-weight: 500;
+  color: #989696;
+  cursor: pointer;
+  padding-bottom: 10px;
+
+}
+.nav-link:hover{
+  @media (min-width:1024px ) {
+    transform: scale(1.2);
+    transition-duration: 400ms;
+  }
+
+}

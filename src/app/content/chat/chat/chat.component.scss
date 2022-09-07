@@ -1,0 +1,11 @@
+.chat-box{
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 16px;
+  overflow: auto;
+  max-height: 76vh;
+  //@media (min-width: 1020px) {
+  //  height: 50vh;
+  //}
+}

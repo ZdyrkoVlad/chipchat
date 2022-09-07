@@ -1,0 +1,20 @@
+<mat-drawer-container *ngIf="getScreenWidth<1023" class="example-container" autosize>
+    <mat-drawer #drawer class="example-sidenav" mode="push">
+        <app-nav></app-nav>
+        <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
+    </mat-drawer>
+    <router-outlet (swiperight)="drawer.toggle()" ></router-outlet>
+
+    <div class="example-sidenav-content">
+        <mat-icon (click)="drawer.toggle()">menu</mat-icon>
+<!--        <button type="button" mat-button >-->
+<!--            -->
+<!--        </button>-->
+    </div>
+
+</mat-drawer-container>
+
+<div *ngIf="getScreenWidth>=1023"  class="relative">
+    <app-nav class="bg-white sticky top-0 z-10"></app-nav>
+    <router-outlet></router-outlet>
+</div>
