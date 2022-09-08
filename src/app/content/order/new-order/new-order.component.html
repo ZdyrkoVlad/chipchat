@@ -34,8 +34,8 @@
             <mat-form-field appearance="outline" class="w-full">
                 <mat-label>Year of manufacture</mat-label>
                 <mat-select [(ngModel)]="selectedValue" name="food">
-                    <mat-option *ngFor="let food of foods" [value]="food.value">
-                        {{food.viewValue}}
+                    <mat-option *ngFor="let year of yearManufature" [value]="year.value">
+                        {{year.viewValue}}
                     </mat-option>
                 </mat-select>
             </mat-form-field>
@@ -43,8 +43,8 @@
             <mat-form-field appearance="outline" class="w-full">
                 <mat-label>Fuel type</mat-label>
                 <mat-select [(ngModel)]="selectedValue" name="food">
-                    <mat-option *ngFor="let food of foods" [value]="food.value">
-                        {{food.viewValue}}
+                    <mat-option *ngFor="let fuel of fuelType" [value]="fuel.value">
+                        {{fuel.viewValue}}
                     </mat-option>
                 </mat-select>
             </mat-form-field>
@@ -52,8 +52,8 @@
             <mat-form-field appearance="outline" class="w-full">
                 <mat-label>Tuning type</mat-label>
                 <mat-select [(ngModel)]="selectedValue" name="food">
-                    <mat-option *ngFor="let food of foods" [value]="food.value">
-                        {{food.viewValue}}
+                    <mat-option *ngFor="let tuning of tuningType" [value]="tuning.value">
+                        {{tuning.viewValue}}
                     </mat-option>
                 </mat-select>
             </mat-form-field>

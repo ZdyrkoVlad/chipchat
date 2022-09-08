@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FuelType } from '../../../dao/order';
 
 export const MY_FORMATS = {
   parse: {
@@ -20,10 +21,20 @@ export const MY_FORMATS = {
 export class NewOrderComponent implements OnInit {
 
   selectedValue = '';
-  foods: any[] = [
-    {value: 'steak-0', viewValue: 'Steak'},
-    {value: 'pizza-1', viewValue: 'Pizza'},
-    {value: 'tacos-2', viewValue: 'Tacos'},
+  fuelType: { value: FuelType, viewValue: string }[] = [
+    { value: FuelType.AI95, viewValue: '95' },
+    { value: FuelType.AI98, viewValue: '98' },
+    { value: FuelType.AI100, viewValue: '100' },
+    { value: FuelType.DIESEL, viewValue: 'Diesel' },
+  ];
+  yearManufature: any[] = [
+    { value: 1980, viewValue: '1980' },
+    { value: 1981, viewValue: '1981' },
+  ];
+  tuningType: any[] = [
+    { value: '1', viewValue: '1' },
+    { value: '2', viewValue: '2' },
+    { value: '3', viewValue: '3' },
   ];
   constructor() { }
 

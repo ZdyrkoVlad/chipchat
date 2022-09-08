@@ -9,10 +9,7 @@ import { ErrorPageComponent } from './common/error-page/error-page.component';
 import { LoginComponent } from './common/login/login.component';
 
 const routes: Routes = [
-  {
-    path: 'order-list',
-    component: OrderListComponent
-  },
+
   {
     path: 'order', component: OrderDetailComponent
   },
@@ -27,6 +24,14 @@ const routes: Routes = [
   },
   {
     path: 'login', component: LoginComponent
+  },
+  {
+    path: 'order-list',
+    component: OrderListComponent
+  },
+  {
+    path: '',
+    component: OrderListComponent
   },
   {
     path: '**', component: ErrorPageComponent
