@@ -36,9 +36,11 @@ export class NewOrderComponent implements OnInit {
     { value: '2', viewValue: '2' },
     { value: '3', viewValue: '3' },
   ];
+
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
 }

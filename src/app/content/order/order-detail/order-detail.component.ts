@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ScreenService } from '../../../service/screen.service';
 
 @Component({
   selector: 'app-order-detail',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrderDetailComponent implements OnInit {
 
-  constructor() { }
+  constructor(private screenService: ScreenService) { }
 
   ngOnInit(): void {
+    console.log(this.screenService.getScreenWidth);
+    console.log(this.screenService.getScreenHeight);
   }
 
 }

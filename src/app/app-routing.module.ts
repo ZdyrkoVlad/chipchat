@@ -7,6 +7,9 @@ import { AccountComponent } from './content/account/account.component';
 import { SupportComponent } from './content/support/support.component';
 import { ErrorPageComponent } from './common/error-page/error-page.component';
 import { LoginComponent } from './common/login/login.component';
+import { PaymentsComponent } from './content/payment/payments/payments.component';
+import { ChatListComponent } from './content/chat/chat-list/chat-list.component';
+import { PaymentDetailComponent } from './content/payment/payment-detail/payment-detail.component';
 
 const routes: Routes = [
 
@@ -24,6 +27,15 @@ const routes: Routes = [
   },
   {
     path: 'login', component: LoginComponent
+  },
+  {
+    path: 'chat-list', component: ChatListComponent
+  },
+  {
+    path: 'invoice', component: PaymentDetailComponent
+  },
+  {
+    path: 'payment', component: PaymentsComponent
   },
   {
     path: 'order-list',

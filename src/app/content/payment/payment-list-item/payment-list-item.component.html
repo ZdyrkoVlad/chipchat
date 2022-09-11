@@ -1,0 +1,21 @@
+<mat-card class="example-card text-left " style="margin-bottom:20px;">
+    <mat-card-subtitle>
+        Payment status <p style="display: inline-block; color:#f3e820; font-size: 18px; text-transform:uppercase;">
+        waiting for payment</p>
+
+    </mat-card-subtitle>
+    <mat-card-title class="text-lg cursor-pointer" routerLink="/invoice">
+
+        <p>Car: Audi SQ7 4.0 TDI tiptronic quattro (435 hp)</p>
+        <p>VIN WAUZZZ4M1JD050072</p>
+    </mat-card-title>
+    <mat-card-content>
+        <div class="flex-row flex justify-between">
+            <p>Price: 80$</p>
+            <div>
+                <button mat-raised-button color="primary" routerLink="/invoice">Pay now</button>
+            </div>
+        </div>
+
+    </mat-card-content>
+</mat-card>
