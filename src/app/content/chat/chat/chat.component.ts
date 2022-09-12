@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Message } from '../../../dao/message';
 
 @Component({
@@ -7,6 +7,7 @@ import { Message } from '../../../dao/message';
   styleUrls: ['./chat.component.scss']
 })
 export class ChatComponent implements OnInit {
+  @Input() standAlone = true;
   messageText = '';
   MessageList: Message[] = [
     {

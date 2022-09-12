@@ -2,17 +2,21 @@
     <div class="pr-2 pt-4 lg:w-1/2">
         <mat-card class="example-card lg:min-h-full">
             <mat-card-header>
-<!--                <div mat-card-avatar class="example-header-image"></div>-->
-<!--                <mat-card-title>Shiba Inu</mat-card-title>-->
-<!--                <mat-card-subtitle>Dog Breed</mat-card-subtitle>-->
+                <!--                <div mat-card-avatar class="example-header-image"></div>-->
+                <!--                <mat-card-title>Shiba Inu</mat-card-title>-->
+                <!--                <mat-card-subtitle>Dog Breed</mat-card-subtitle>-->
             </mat-card-header>
 
             <mat-card-content>
                 <mat-card-subtitle>
-                    Status <p style="display: inline-block; color:#02970aad; font-size: 18px; text-transform:uppercase;">Active</p>
+                    Status <p
+                        style="display: inline-block; color:#02970aad; font-size: 18px; text-transform:uppercase;">
+                    Active</p>
                 </mat-card-subtitle>
 
-                <mat-card-title class="text-lg cursor-pointer" routerLink="/order" >Car: Audi SQ7 4.0 TDI tiptronic quattro (435 hp)</mat-card-title>
+                <mat-card-title class="text-lg cursor-pointer" routerLink="/order">Car: Audi SQ7 4.0 TDI tiptronic
+                    quattro (435 hp)
+                </mat-card-title>
                 <mat-card-content *ngIf="true">
                     <div class="flex  flex-col justify-between text-lg">
                         <p>id 12152</p>
@@ -27,7 +31,7 @@
     <div class="pt-4 lg:w-1/2 ">
         <mat-card class="chat-card">
             <mat-card-content>
-                <app-chat></app-chat>
+                <app-chat [standAlone]="false"></app-chat>
             </mat-card-content>
 
         </mat-card>

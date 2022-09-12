@@ -33,6 +33,8 @@ import { PaymentListItemComponent } from './content/payment/payment-list-item/pa
 import { PaymentDetailComponent } from './content/payment/payment-detail/payment-detail.component';
 import { PaymentModuleComponent } from './content/payment/payment-module/payment-module.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { ChatDetailComponent } from './content/chat/chat-detail/chat-detail.component';
+import { AttachFileDialogComponent } from './common/attach-file-dialog/attach-file-dialog.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +56,9 @@ import { MatDialogModule } from '@angular/material/dialog';
     PaymentListComponent,
     PaymentListItemComponent,
     PaymentDetailComponent,
-    PaymentModuleComponent
+    PaymentModuleComponent,
+    ChatDetailComponent,
+    AttachFileDialogComponent
   ],
   imports: [
     BrowserModule,

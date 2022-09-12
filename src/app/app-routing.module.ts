@@ -10,6 +10,8 @@ import { LoginComponent } from './common/login/login.component';
 import { PaymentsComponent } from './content/payment/payments/payments.component';
 import { ChatListComponent } from './content/chat/chat-list/chat-list.component';
 import { PaymentDetailComponent } from './content/payment/payment-detail/payment-detail.component';
+import { ChatComponent } from './content/chat/chat/chat.component';
+import { ChatDetailComponent } from './content/chat/chat-detail/chat-detail.component';
 
 const routes: Routes = [
 
@@ -30,6 +32,9 @@ const routes: Routes = [
   },
   {
     path: 'chat-list', component: ChatListComponent
+  },
+  {
+    path: 'chat', component: ChatDetailComponent
   },
   {
     path: 'invoice', component: PaymentDetailComponent

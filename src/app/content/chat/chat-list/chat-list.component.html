@@ -1,1 +1,26 @@
-<p>chat-list works!</p>
+<div class=" relative ">
+    <div class="sticky bg-white top-0 z-10 lg:flex lg:justify-center">
+        <mat-form-field class="w-full lg:w-2/3 px-10 lg:px-0" appearance="outline">
+                        <span matPrefix> </span>
+            <input type="tel" matInput placeholder="Search" class="" name="search">
+            <button matSuffix mat-button>
+                <mat-icon>search</mat-icon>
+            </button>
+        </mat-form-field>
+        <hr>
+    </div>
+
+
+    <div class="flex justify-center">
+        <div class="h-full form-container lg:w-2/3 w-full">
+            <app-chat-list-item></app-chat-list-item>
+            <app-chat-list-item></app-chat-list-item>
+            <app-chat-list-item></app-chat-list-item>
+            <app-chat-list-item></app-chat-list-item>
+            <app-chat-list-item></app-chat-list-item>
+
+        </div>
+    </div>
+</div>
+
+

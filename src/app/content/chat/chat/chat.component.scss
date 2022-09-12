@@ -6,6 +6,7 @@
   overflow: auto;
   max-height: 76vh;
   @media (max-width: 1020px) {
-    height: 45vh;
+    //height: 45vh;
+    max-height: 84vh;
   }
 }
