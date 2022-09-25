@@ -14,15 +14,25 @@
                     Active</p>
                 </mat-card-subtitle>
 
-                <mat-card-title class="text-lg cursor-pointer" routerLink="/order">Car: Audi SQ7 4.0 TDI tiptronic
+                <mat-card-title class="text-lg cursor-pointer" routerLink="/order">Car:
+                    Audi SQ7 4.0 TDI tiptronic
                     quattro (435 hp)
+
                 </mat-card-title>
-                <mat-card-content *ngIf="true">
+                <div (click)="changeStatusSize()" *ngIf="!statusMaxSize && width<1024"
+                     class="flex flex-row justify-center">
+                    <mat-icon>keyboard_arrow_down</mat-icon>
+                </div>
+
+                <mat-card-content *ngIf="statusMaxSize">
                     <div class="flex  flex-col justify-between text-lg">
                         <p>id 12152</p>
                         <p>VIN WAUZZZ4M1JD050072</p>
                         <p>Data Nov 23, 2021</p>
                         <p>Price 0 coin</p>
+                    </div>
+                    <div (click)="changeStatusSize()" *ngIf="statusMaxSize && width<1024" class="flex flex-row justify-center">
+                        <mat-icon>keyboard_arrow_up</mat-icon>
                     </div>
                 </mat-card-content>
             </mat-card-content>

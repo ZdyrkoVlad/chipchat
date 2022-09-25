@@ -8,11 +8,21 @@ import { ScreenService } from '../../../service/screen.service';
 })
 export class OrderDetailComponent implements OnInit {
 
+  statusMaxSize = true;
+  width: number = 0;
+
   constructor(private screenService: ScreenService) { }
 
   ngOnInit(): void {
-    console.log(this.screenService.getScreenWidth);
-    console.log(this.screenService.getScreenHeight);
+    [this.width] = this.screenService.onWindowResize();
+    if (this.width <= 1024) {
+      this.statusMaxSize = false;
+    }
+  }
+
+  changeStatusSize(): void {
+    console.log('changeStatusSize');
+    this.statusMaxSize = !this.statusMaxSize;
   }
 
 }

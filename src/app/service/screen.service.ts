@@ -7,11 +7,10 @@ export class ScreenService {
 
   constructor() {}
 
-  @HostListener('window:resize', ['$event'])
-  onWindowResize() {
+  // @HostListener('window:resize', ['$event'])
+  onWindowResize(): number[] {
     this.getScreenWidth = window.innerWidth;
     this.getScreenHeight = window.innerHeight;
-    console.log(this.getScreenWidth);
-    console.log(this.getScreenHeight);
+    return [this.getScreenWidth, this.getScreenHeight];
   }
 }
