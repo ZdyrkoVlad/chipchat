@@ -1,12 +1,6 @@
 <div class="flex lg:flex-row flex-col">
-    <div class="pr-2 pt-4 lg:w-1/2">
+    <div class="px-2 pt-4 lg:w-1/2">
         <mat-card class="example-card lg:min-h-full">
-            <mat-card-header>
-                <!--                <div mat-card-avatar class="example-header-image"></div>-->
-                <!--                <mat-card-title>Shiba Inu</mat-card-title>-->
-                <!--                <mat-card-subtitle>Dog Breed</mat-card-subtitle>-->
-            </mat-card-header>
-
             <mat-card-content>
                 <mat-card-subtitle>
                     Status <p
@@ -25,25 +19,36 @@
                 </div>
 
                 <mat-card-content *ngIf="statusMaxSize">
-                    <div class="flex  flex-col justify-between text-lg">
-                        <p>id 12152</p>
-                        <p>VIN WAUZZZ4M1JD050072</p>
-                        <p>Data Nov 23, 2021</p>
-                        <p>Price 0 coin</p>
+                    <div class="flex flex-col text-lg">
+                        <div class="flex lg:justify-start justify-between">
+                            <p class="text-lg text-gray-400 inline-block pr-2">Order id</p>
+                            <p class="inline-block"> 12152</p>
+                        </div>
+                        <div class="flex lg:justify-start justify-between">
+                            <p class="text-lg text-gray-400 inline-block pr-2">VIN</p>
+                            <p class="inline-block"> WAUZZZ4M1JD050072</p>
+                        </div>
+                        <div class="flex lg:justify-start justify-between">
+                            <p class="text-lg text-gray-400 inline-block pr-2">Price</p>
+                            <p class="inline-block"> 100 $</p>
+                        </div>
+                        <div class="flex lg:justify-start justify-between">
+                            <p class="text-lg text-gray-400 inline-block pr-2">Create date</p>
+                            <p class="inline-block"> Nov 23, 2021</p>
+                        </div>
                     </div>
-                    <div (click)="changeStatusSize()" *ngIf="statusMaxSize && width<1024" class="flex flex-row justify-center">
+                    <div (click)="changeStatusSize()" *ngIf="statusMaxSize && width<1024"
+                         class="flex flex-row justify-center">
                         <mat-icon>keyboard_arrow_up</mat-icon>
                     </div>
                 </mat-card-content>
             </mat-card-content>
         </mat-card>
     </div>
-    <div class="pt-4 lg:w-1/2 ">
-        <mat-card class="chat-card">
-            <mat-card-content>
-                <app-chat [standAlone]="false"></app-chat>
-            </mat-card-content>
 
-        </mat-card>
+    <div class="px-4 pt-2 lg:w-1/2 ">
+
+        <app-chat [standAlone]="false"></app-chat>
+
     </div>
 </div>

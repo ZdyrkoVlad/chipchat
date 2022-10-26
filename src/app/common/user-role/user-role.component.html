@@ -1,0 +1,26 @@
+<div class="flex flex-row justify-around">
+    <mat-card class="mt-custom lg:w-2/3">
+        <mat-card-title class="text-center">Choose user role</mat-card-title>
+        <mat-card-content>
+            <div *ngIf="userRole">
+                <p class="text-center font-medium">You are {{userRole.toLowerCase() }} now</p>
+            </div>
+            <div class="flex lg:justify-around lg:flex-row flex-col gap-4">
+                <button class="lg:w-1/4 w-full " mat-raised-button color="primary"
+                        (click)="setAutRole(roleEnum.DEALER)">Dealer
+                </button>
+                <button class="lg:w-1/4 w-full " mat-raised-button color="primary"
+                        (click)="setAutRole(roleEnum.DISTRIBUTOR)">Distributor
+                </button>
+                <button class="lg:w-1/4 w-full" mat-raised-button color="primary"
+                        (click)="setAutRole(roleEnum.DEVELOPER)">Developer
+                </button>
+
+                <button *ngIf="userRole" class="lg:w-1/4 w-full" mat-raised-button color="basic"
+                        routerLink="">Continue
+                </button>
+            </div>
+
+        </mat-card-content>
+    </mat-card>
+</div>

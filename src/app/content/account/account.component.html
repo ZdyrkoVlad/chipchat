@@ -1,27 +1,20 @@
-<div class="pr-2 pt-4 ">
-    <mat-card class="example-card ">
-        <mat-card-header>
-            <mat-card-title>User Name</mat-card-title>
-            <mat-card-subtitle>email@mail.com</mat-card-subtitle>
-        </mat-card-header>
+<div class="text-center p-4">
+    <h1 class="italic">Account list</h1>
+    <div class="flex justify-center flex-col lg:flex-row">
 
-        <mat-card-content>
-            <div>
-                <p class="text-lg text-gray-400 inline-block pr-2">User role</p>
-                <p class="inline-block"> User</p>
+        <div class="lg:w-2/3 h-full form-container">
+            <div class="flex flex-row justify-between">
+                <h3 class="text-left">See all information about the account</h3>
             </div>
-            <div>
-                <p class="text-lg text-gray-400 inline-block pr-2">Email</p>
-                <p class="inline-block"> test@test.com.ua</p>
+
+            <div class="flex-row flex ">
+                <app-search class="w-full"></app-search>
+                <div class="pl-4 flex items-center cursor-pointer">
+                    <mat-icon color="primary" matTooltip="Data filters">filter_list</mat-icon>
+                </div>
             </div>
-            <div>
-                <p class="text-lg text-gray-400 inline-block pr-2">Phone</p>
-                <p class="inline-block"> +380(98)327-12-12</p>
-            </div>
-            <div>
-                <p class="text-lg text-gray-400 inline-block pr-2">Registered date</p>
-                <p class="inline-block"> 8 Sep. 2021</p>
-            </div>
-        </mat-card-content>
-    </mat-card>
+            <app-account-list-item></app-account-list-item>
+        </div>
+    </div>
 </div>
+

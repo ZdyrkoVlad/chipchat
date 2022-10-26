@@ -1,0 +1,132 @@
+<!--<div >-->
+<!--    <div class="px-4 py-5 chat-box bg-white h-auto ">-->
+<!--        <div *ngFor="let message of MessageList ">-->
+<!--            <div class="media w-50 mb-3 flex flex-row max-w-50">-->
+<!--                &lt;!&ndash;                <img src="https://bootstrapious.com/i/snippets/sn-chat/avatar.svg"&ndash;&gt;-->
+<!--                &lt;!&ndash;                     alt="user"&ndash;&gt;-->
+<!--                &lt;!&ndash;                     width="50" class="rounded-circle">&ndash;&gt;-->
+<!--                <div class="media-body ml-3">-->
+<!--                    <div class="bg-light rounded py-2 px-3 mb-2 bg-gray-200">-->
+<!--                        <p class="text-small mb-0 text-muted">{{message.text}}</p>-->
+<!--                    </div>-->
+<!--                    &lt;!&ndash;                    <p class="small text-muted">{{message.createDate}}</p>&ndash;&gt;-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+
+<!--    <div class="flex flex-row border-2 hover:border-purple-400">-->
+<!--        <div class="flex items-center">-->
+<!--            <mat-icon matSuffix class="cursor-pointer ">attach_file</mat-icon>-->
+<!--        </div>-->
+<!--        <mat-form-field appearance="legacy" class="w-full">-->
+<!--            <mat-label>Enter message</mat-label>-->
+<!--            <input matInput class="w-full">-->
+<!--            <mat-icon matSuffix class="cursor-pointer">send</mat-icon>-->
+
+<!--        </mat-form-field>-->
+<!--    </div>-->
+
+<!--</div>-->
+<!--<body class="flex flex-col items-center justify-center w-screen min-h-screen bg-gray-100 text-gray-800 p-10">-->
+
+<!-- Component Start -->
+<div class="flex flex-col items-center justify-center" style="min-height:600px">
+    <div class="flex flex-col flex-grow w-full max-w-xl bg-white shadow-xl rounded-lg overflow-hidden">
+        <div class="flex flex-col flex-grow h-0 p-4 overflow-auto">
+            <div class="flex w-full mt-2 space-x-3 max-w-xs">
+                <div class="flex-shrink-0 h-10 w-10 rounded-full bg-gray-300"></div>
+                <div>
+                    <div class="bg-gray-300 p-3 rounded-r-lg rounded-bl-lg">
+                        <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                    <span class="text-xs text-gray-500 leading-none">2 min ago</span>
+                </div>
+            </div>
+            <div class="flex w-full mt-2 space-x-3 max-w-xs ml-auto justify-end">
+                <div>
+                    <div class="bg-blue-600 text-white p-3 rounded-l-lg rounded-br-lg">
+                        <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
+                    </div>
+                    <span class="text-xs text-gray-500 leading-none">2 min ago</span>
+                </div>
+                <div class="flex-shrink-0 h-10 w-10 rounded-full bg-gray-300"></div>
+            </div>
+            <div class="flex w-full mt-2 space-x-3 max-w-xs ml-auto justify-end">
+                <div>
+                    <div class="bg-blue-600 text-white p-3 rounded-l-lg rounded-br-lg">
+                        <p class="text-sm">Lorem ipsum dolor sit amet.</p>
+                    </div>
+                    <span class="text-xs text-gray-500 leading-none">2 min ago</span>
+                </div>
+                <div class="flex-shrink-0 h-10 w-10 rounded-full bg-gray-300"></div>
+            </div>
+            <div class="flex w-full mt-2 space-x-3 max-w-xs">
+                <div class="flex-shrink-0 h-10 w-10 rounded-full bg-gray-300"></div>
+                <div>
+                    <div class="bg-gray-300 p-3 rounded-r-lg rounded-bl-lg">
+                        <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. </p>
+                    </div>
+                    <span class="text-xs text-gray-500 leading-none">2 min ago</span>
+                </div>
+            </div>
+            <div class="flex w-full mt-2 space-x-3 max-w-xs ml-auto justify-end">
+                <div>
+                    <div class="bg-blue-600 text-white p-3 rounded-l-lg rounded-br-lg">
+                        <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. </p>
+                    </div>
+                    <span class="text-xs text-gray-500 leading-none">2 min ago</span>
+                </div>
+                <div class="flex-shrink-0 h-10 w-10 rounded-full bg-gray-300"></div>
+            </div>
+            <div class="flex w-full mt-2 space-x-3 max-w-xs ml-auto justify-end">
+                <div>
+                    <div class="bg-blue-600 text-white p-3 rounded-l-lg rounded-br-lg">
+                        <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                            tempor incididunt.</p>
+                    </div>
+                    <span class="text-xs text-gray-500 leading-none">2 min ago</span>
+                </div>
+                <div class="flex-shrink-0 h-10 w-10 rounded-full bg-gray-300"></div>
+            </div>
+            <div class="flex w-full mt-2 space-x-3 max-w-xs ml-auto justify-end">
+                <div>
+                    <div class="bg-blue-600 text-white p-3 rounded-l-lg rounded-br-lg">
+                        <p class="text-sm">Lorem ipsum dolor sit amet.</p>
+                    </div>
+                    <span class="text-xs text-gray-500 leading-none">2 min ago</span>
+                </div>
+                <div class="flex-shrink-0 h-10 w-10 rounded-full bg-gray-300"></div>
+            </div>
+            <div class="flex w-full mt-2 space-x-3 max-w-xs">
+                <div class="flex-shrink-0 h-10 w-10 rounded-full bg-gray-300"></div>
+                <div>
+                    <div class="bg-gray-300 p-3 rounded-r-lg rounded-bl-lg">
+                        <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. </p>
+                    </div>
+                    <span class="text-xs text-gray-500 leading-none">2 min ago</span>
+                </div>
+            </div>
+            <div class="flex w-full mt-2 space-x-3 max-w-xs ml-auto justify-end">
+                <div>
+                    <div class="bg-blue-600 text-white p-3 rounded-l-lg rounded-br-lg">
+                        <p class="text-sm">Lorem ipsum dolor sit.</p>
+                    </div>
+                    <span class="text-xs text-gray-500 leading-none">2 min ago</span>
+                </div>
+                <div class="flex-shrink-0 h-10 w-10 rounded-full bg-gray-300"></div>
+            </div>
+        </div>
+
+        <div class="bg-gray-300 p-4">
+            <input class="flex items-center h-10 w-full rounded px-3 text-sm" type="text"
+                   placeholder="Type your message…">
+        </div>
+    </div>
+</div>
+<!-- Component End  -->
+
+<!--</body>-->

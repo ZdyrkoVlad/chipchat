@@ -9,9 +9,12 @@ import { ErrorPageComponent } from './common/error-page/error-page.component';
 import { LoginComponent } from './common/login/login.component';
 import { PaymentsComponent } from './content/payment/payments/payments.component';
 import { ChatListComponent } from './content/chat/chat-list/chat-list.component';
-import { PaymentDetailComponent } from './content/payment/payment-detail/payment-detail.component';
-import { ChatComponent } from './content/chat/chat/chat.component';
 import { ChatDetailComponent } from './content/chat/chat-detail/chat-detail.component';
+import { UserRoleComponent } from './common/user-role/user-role.component';
+import { SingUpComponent } from './common/sing-up/sing-up.component';
+import { SupportDetailComponent } from './content/support/support-detail/support-detail.component';
+import { TestComponent } from './common/test/test.component';
+import { InvoiceListComponent } from './content/invoice/invoice-list/invoice-list.component';
 
 const routes: Routes = [
 
@@ -28,23 +31,37 @@ const routes: Routes = [
     path: 'support', component: SupportComponent
   },
   {
+    path: 'support-detail', component: SupportDetailComponent
+  },
+  {
     path: 'login', component: LoginComponent
+  },
+  {
+    path: 'sing-up', component: SingUpComponent
   },
   {
     path: 'chat-list', component: ChatListComponent
   },
   {
-    path: 'chat', component: ChatDetailComponent
+    path: 'chat/:id', component: ChatDetailComponent
   },
   {
-    path: 'invoice', component: PaymentDetailComponent
+    path: 'invoices', component: InvoiceListComponent
   },
   {
-    path: 'payment', component: PaymentsComponent
+    path: 'payments', component: PaymentsComponent
   },
   {
     path: 'order-list',
     component: OrderListComponent
+  },
+  {
+    path: 'user-role',
+    component: UserRoleComponent
+  },
+  {
+    path: 'test',
+    component: TestComponent
   },
   {
     path: '',
@@ -52,7 +69,7 @@ const routes: Routes = [
   },
   {
     path: '**', component: ErrorPageComponent
-  }
+  },
 ];
 
 @NgModule({

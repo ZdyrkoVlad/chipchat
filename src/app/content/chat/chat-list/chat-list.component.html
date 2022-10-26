@@ -1,29 +1,25 @@
-<div class=" relative ">
-    <div class="sticky bg-white top-0 z-10 lg:flex lg:justify-center">
-        <mat-form-field class="w-full lg:w-2/3 px-10 lg:px-0" appearance="outline">
-                        <span matPrefix> </span>
-            <input type="tel" matInput placeholder="Search" class="" name="search">
-            <button matSuffix mat-button>
-                <mat-icon>search</mat-icon>
-            </button>
-        </mat-form-field>
-        <hr>
-    </div>
+<div class="text-center p-4 flex justify-center">
 
+    <div class="h-full form-container lg:w-2/3 w-full">
+        <h1 class="italic">Chat list</h1>
+        <div class="flex flex-row justify-between">
 
-    <div class="flex justify-center">
-        <div class="h-full form-container lg:w-2/3 w-full">
-            <app-chat-list-item></app-chat-list-item>
-            <app-chat-list-item></app-chat-list-item>
-            <app-chat-list-item></app-chat-list-item>
-            <app-chat-list-item></app-chat-list-item>
-            <app-chat-list-item></app-chat-list-item>
-            <app-chat-list-item></app-chat-list-item>
-            <app-chat-list-item></app-chat-list-item>
-            <app-chat-list-item></app-chat-list-item>
-
+            <h3 class="text-left">See all chat</h3>
         </div>
+
+        <div class="flex-row flex ">
+            <app-search class="w-full"></app-search>
+            <div class="pl-4 flex items-center cursor-pointer">
+                <mat-icon color="primary" matTooltip="Data filters">filter_list</mat-icon>
+            </div>
+        </div>
+        <div *ngFor="let chatElement of chatList">
+            <app-chat-list-item [chatData]="chatElement"></app-chat-list-item>
+        </div>
+
+
     </div>
 </div>
+
 
 

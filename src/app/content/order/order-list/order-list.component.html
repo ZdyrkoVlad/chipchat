@@ -6,9 +6,19 @@
             <div class="flex flex-row justify-between">
                 <h3 class="text-left">See all information about the your orders</h3>
                 <div>
-                    <button mat-raised-button color="primary" routerLink="/new-order">New order</button>
+                    <button *ngIf="userRole!==roleEnum.DEVELOPER" mat-raised-button color="primary"
+                            routerLink="/new-order">New order
+                    </button>
                 </div>
             </div>
+
+            <div class="flex-row flex ">
+                <app-search class="w-full"></app-search>
+                <div class="pl-4 flex items-center cursor-pointer">
+                    <mat-icon color="primary" matTooltip="Data filters">filter_list</mat-icon>
+                </div>
+            </div>
+
             <app-order-list-item></app-order-list-item>
             <app-order-list-item></app-order-list-item>
             <app-order-list-item></app-order-list-item>

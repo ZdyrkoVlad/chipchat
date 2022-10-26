@@ -1,17 +1,48 @@
 <mat-card class="example-card text-left " style="margin-bottom:20px;">
     <mat-card-subtitle>
-        Status <p style="display: inline-block; color:#02970aad; font-size: 18px; text-transform:uppercase;">Active</p>
+        <div class="flex flex-row justify-between">
+            <div>
+                Status <p style="display: inline-block; color:#02970aad; font-size: 18px; text-transform:uppercase;">
+                Active</p>
+            </div>
+
+            <div class="flex flex-row items-center">
+                <div class="pr-2">Created by</div>
+                <div class="inline-block font-bold text-xl text-purple-600">
+                    User Name
+                </div>
+            </div>
+        </div>
+
     </mat-card-subtitle>
 
-    <mat-card-title class="text-lg cursor-pointer" routerLink="/order" >Car: Audi SQ7 4.0 TDI tiptronic quattro (435 hp)</mat-card-title>
+    <mat-card-title class="text-lg cursor-pointer text-center" routerLink="/order">Car: Audi SQ7 4.0 TDI tiptronic
+        quattro (435
+        hp)
+    </mat-card-title>
     <mat-card-content>
-        <div class="flex lg:flex-row flex-col justify-between text-lg">
-            <p>id 12152</p>
-            <p>VIN WAUZZZ4M1JD050072</p>
-            <p>Data Nov 23, 2021</p>
-            <p>Price 0 coin</p>
+        <div class="flex flex-col text-lg">
+            <div class="flex lg:justify-start justify-between">
+                <p class="text-lg text-gray-400 inline-block pr-2">Order id</p>
+                <p class="inline-block"> 12152</p>
+            </div>
+            <div class="flex lg:justify-start justify-between">
+                <p class="text-lg text-gray-400 inline-block pr-2">VIN</p>
+                <p class="inline-block"> WAUZZZ4M1JD050072</p>
+            </div>
+            <div class="flex lg:justify-start justify-between">
+                <p class="text-lg text-gray-400 inline-block pr-2">Price </p>
+                <p class="inline-block"> 100 $</p>
+            </div>
+            <div class="flex lg:justify-start justify-between">
+                <p class="text-lg text-gray-400 inline-block pr-2">Create date</p>
+                <p class="inline-block"> Nov 23, 2021</p>
+            </div>
         </div>
     </mat-card-content>
-    <mat-card-actions>
+    <mat-card-actions class="flex flex-row justify-end">
+        <button mat-raised-button color="primary"
+                routerLink="/order">View
+        </button>
     </mat-card-actions>
 </mat-card>

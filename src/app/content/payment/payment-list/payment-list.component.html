@@ -1,11 +1,25 @@
-<div class="flex justify-center">
-    <div class="h-full form-container lg:w-2/3">
-        <app-payment-list-item></app-payment-list-item>
-        <app-payment-list-item></app-payment-list-item>
-        <app-payment-list-item></app-payment-list-item>
-        <app-payment-list-item></app-payment-list-item>
-        <app-payment-list-item></app-payment-list-item>
-        <app-payment-list-item></app-payment-list-item>
+<div class="text-center p-4">
+    <h1 class="italic">Payment list</h1>
+    <div class="flex justify-center ">
+
+        <div class="lg:w-2/3 h-full form-container">
+            <div class="flex flex-row justify-between">
+                <h3 class="text-left">See all information about the payments</h3>
+            </div>
+
+            <div class="flex-row flex ">
+                <app-search class="w-full"></app-search>
+                <div class="pl-4 flex items-center cursor-pointer">
+                    <mat-icon color="primary" matTooltip="Data filters">filter_list</mat-icon>
+                </div>
+            </div>
+            <app-payment-list-item></app-payment-list-item>
+            <app-payment-list-item></app-payment-list-item>
+            <app-payment-list-item></app-payment-list-item>
+            <app-payment-list-item></app-payment-list-item>
+            <app-payment-list-item></app-payment-list-item>
+            <app-payment-list-item></app-payment-list-item>
+
+        </div>
     </div>
 </div>
-

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FuelType } from '../../../dao/order';
+import { FuelType, OrderData } from '../../../dao/order';
+import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Validator } from '@angular/forms';
 
 export const MY_FORMATS = {
   parse: {
@@ -27,19 +29,36 @@ export class NewOrderComponent implements OnInit {
     { value: FuelType.AI100, viewValue: '100' },
     { value: FuelType.DIESEL, viewValue: 'Diesel' },
   ];
-  yearManufature: any[] = [
-    { value: 1980, viewValue: '1980' },
-    { value: 1981, viewValue: '1981' },
-  ];
-  tuningType: any[] = [
-    { value: '1', viewValue: '1' },
-    { value: '2', viewValue: '2' },
-    { value: '3', viewValue: '3' },
-  ];
+
+  filesList: any[] = [];
+
+  orderForm: FormGroup = new FormGroup({
+    mark: new FormControl('', [Validators.required]),
+    model: new FormControl('', [Validators.required]),
+    generation: new FormControl('', [Validators.required]),
+    series: new FormControl('', [Validators.required]),
+    modification: new FormControl('', [Validators.required]),
+    yearOfManufacture: new FormControl('', [Validators.required]),
+    fuelType: new FormControl('', [Validators.required]),
+    tuningType: new FormControl('', [Validators.required]),
+    VIN: new FormControl('', [Validators.required]),
+    additionalInfo: new FormControl('', [Validators.required]),
+    phone: new FormControl('', [Validators.required]),
+    userName: new FormControl('', [Validators.required]),
+    file: new FormControl(''),
+  });
 
   constructor() { }
 
   ngOnInit(): void {
+
+  }
+
+  attachFile(event: any): void {
+    this.filesList.push('1');
+  }
+
+  onSubmit(): void {
 
   }
 

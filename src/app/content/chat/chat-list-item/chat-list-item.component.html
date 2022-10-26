@@ -1,15 +1,17 @@
-<mat-card class="example-card text-left my-2" >
-    <mat-card-subtitle>
-        User <p style="display: inline-block; color:#000000; font-size: 18px; text-transform:uppercase;">
-        User name</p>
+<mat-card class="example-card text-left my-2">
+    <mat-card-subtitle class="flex-row flex lg:justify-start justify-between">
+        <p class="pr-2">User Name {{chatData.id}} </p>
+
+        <p class="uppercase text-yellow-300 bold  font-medium">
+            DEALER</p>
 
     </mat-card-subtitle>
-    <mat-card-content class="cursor-pointer" routerLink="/chat" >
+    <mat-card-content class="cursor-pointer" [routerLink]="['/chat', this.chatData.id]">
         <div class="flex-row flex justify-between">
-            <p>Last message: Some last message text</p>
-<!--            <div>-->
-<!--                <button mat-raised-button color="primary" routerLink="/invoice">Open chat</button>-->
-<!--            </div>-->
+            <p>{{this.lastMessage}}</p>
+            <!--            <div>-->
+            <!--                <button mat-raised-button color="primary" routerLink="/invoice">Open chat</button>-->
+            <!--            </div>-->
         </div>
 
     </mat-card-content>

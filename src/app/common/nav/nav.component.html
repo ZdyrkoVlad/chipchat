@@ -1,8 +1,27 @@
-<nav class="flex lg:flex-row pt-4 flex-col justify-around bg-white border-b-2">
+<nav *ngIf="userRole === roleEnum.DEVELOPER "
+     class="flex lg:flex-row pt-4 flex-col justify-around bg-white border-b-2">
     <div class="nav-link" routerLink="order-list">Orders</div>
     <div class="nav-link" routerLink="account">Account</div>
     <div class="nav-link" routerLink="support">Support</div>
-    <div class="nav-link" routerLink="payment">Payment</div>
+    <div class="nav-link" routerLink="invoices">Invoices</div>
     <div class="nav-link" routerLink="chat-list">Chat</div>
-<!--    <div class="nav-link" routerLink="sing-up">Sing-up</div>-->
+    <div class="nav-link" routerLink="user-role">Change role</div>
 </nav>
+
+<nav *ngIf=" userRole === roleEnum.DISTRIBUTOR"
+     class="flex lg:flex-row pt-4 flex-col justify-around bg-white border-b-2">
+    <div class="nav-link" routerLink="order-list">Orders</div>
+    <div class="nav-link" routerLink="account">Account</div>
+    <div class="nav-link" routerLink="support">Support</div>
+    <div class="nav-link" routerLink="payments">Payment</div>
+    <div class="nav-link" routerLink="chat-list">Chat</div>
+    <div class="nav-link" routerLink="user-role">Change role</div>
+</nav>
+
+<nav *ngIf="userRole === roleEnum.DEALER" class="flex lg:flex-row pt-4 flex-col justify-around bg-white border-b-2">
+    <div class="nav-link" routerLink="order-list">Orders</div>
+    <div class="nav-link" routerLink="support">Support</div>
+    <div class="nav-link" routerLink="payments">Payment</div>
+    <div class="nav-link" routerLink="user-role">Change role</div>
+</nav>
+

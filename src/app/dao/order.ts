@@ -1,9 +1,10 @@
 export interface Order {
   id: string;
-  carData: CarData;
+  orderData: OrderData;
+  orderStatus: OrderStatus;
 }
 
-export interface CarData {
+export interface OrderData {
   model: string;
   mark: string;
   generation: string;
@@ -20,6 +21,12 @@ export enum FuelType {
   AI95 = 'AI95',
   AI98 = 'AI98',
   AI100 = 'AI100',
-  DIESEL = 'diesel'
+  DIESEL = 'Diesel'
+}
+
+export enum OrderStatus {
+  IN_PROGRESS = 'IN PROGRESS',
+  PAYMENTED = 'PAYMENTED',
+  OVERDUE = 'OVERDUE'
 }
 

@@ -1,24 +1,31 @@
-<div class="pr-2 pt-4 ">
-    <mat-card class="example-card ">
-        <mat-card-header>
-            <mat-card-title>Support</mat-card-title>
-            <mat-card-subtitle>
-                <p>support from a company representative</p>
-                <p>Send message to company representative</p></mat-card-subtitle>
-        </mat-card-header>
+<div class="text-center p-4">
+    <h1 class="italic">Support</h1>
+    <div class="flex justify-center flex-col lg:flex-row">
 
-        <mat-card-content>
+        <div class="lg:w-2/3 h-full form-container">
+            <div class="flex flex-row justify-between">
+                <h3 class="text-left">You can ask a question to your distributor or developer</h3>
+            </div>
+
+            <div class="my-3">
+                <button class="w-full" mat-raised-button color="primary" (click)="createSupportChat()">
+                    Create new chat
+                </button>
+            </div>
+
+            <div class="flex-row flex ">
+                <app-search class="w-full"></app-search>
+                <div class="pl-4 flex items-center cursor-pointer">
+                    <mat-icon color="primary" matTooltip="Data filters">filter_list</mat-icon>
+                </div>
+            </div>
 
 
-        </mat-card-content>
-    </mat-card>
+            <app-support-list-item></app-support-list-item>
+            <app-support-list-item></app-support-list-item>
+            <app-support-list-item></app-support-list-item>
 
-    <div class="pt-4 ">
-        <mat-card class="chat-card">
-            <mat-card-content>
-                <app-chat [standAlone]="false"></app-chat>
-            </mat-card-content>
-
-        </mat-card>
+        </div>
     </div>
 </div>
+

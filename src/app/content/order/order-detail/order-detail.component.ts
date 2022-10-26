@@ -21,7 +21,6 @@ export class OrderDetailComponent implements OnInit {
   }
 
   changeStatusSize(): void {
-    console.log('changeStatusSize');
     this.statusMaxSize = !this.statusMaxSize;
   }
 

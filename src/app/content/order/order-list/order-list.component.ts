@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../../../service/user.service';
+import { role } from '../../../dao/role';
 
 @Component({
   selector: 'app-order-detail-list',
@@ -6,8 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./order-list.component.scss']
 })
 export class OrderListComponent implements OnInit {
+  roleEnum = role;
 
-  constructor() { }
+  get userRole(): role | undefined {
+    return this.userService.role;
+  }
+
+  constructor(private userService: UserService) { }
 
   ngOnInit(): void {
   }

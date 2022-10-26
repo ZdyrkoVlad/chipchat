@@ -1,0 +1,20 @@
+.chat-box{
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 16px;
+  overflow: auto;
+  max-height:calc(89vh - 30px) ;
+ //max-height: 100%;
+  @media (max-width: 1020px) {
+    //height: 45vh;
+    //max-height: 61vh;
+  }
+  @media (max-width: 320px) {
+    //height: 45vh;
+    //max-height: 49vh;
+  }
+
+}
+
+
