@@ -2,6 +2,10 @@ export interface Order {
   id: string;
   orderData: OrderData;
   orderStatus: OrderStatus;
+  chatId: string;
+  createdUserID: string;
+  usersIdList: string[];
+  createDate: Date;
 }
 
 export interface OrderData {
@@ -27,6 +31,7 @@ export enum FuelType {
 export enum OrderStatus {
   IN_PROGRESS = 'IN PROGRESS',
   PAYMENTED = 'PAYMENTED',
-  OVERDUE = 'OVERDUE'
+  OVERDUE = 'OVERDUE',
+  CANCELED = 'CANCELED'
 }
 

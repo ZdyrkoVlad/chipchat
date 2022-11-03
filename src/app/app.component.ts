@@ -1,4 +1,6 @@
 import { Component, HostListener, OnInit } from '@angular/core';
+import { UserService } from './service/user.service';
+import { role } from './dao/role';
 
 @Component({
   selector: 'app-root',
@@ -7,7 +9,12 @@ import { Component, HostListener, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
   title = 'chipchat';
-  showFiller = false;
+
+  get userRole(): role | undefined {
+    return this.userService.role;
+  }
+
+  constructor(private userService: UserService) {}
 
   public getScreenWidth: any;
   public getScreenHeight: any;

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { role } from '../../../dao/role';
+import { UserService } from '../../../service/user.service';
 
 @Component({
   selector: 'app-payment-list',
@@ -6,10 +8,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./payment-list.component.scss']
 })
 export class PaymentListComponent implements OnInit {
+  roleEnum = role;
+  // checkoutActivate = false;
 
-  constructor() { }
+  paymentCheckoutList: string[] = [];
+
+  get userRole(): role | undefined {
+    return this.userService.role;
+  }
+
+  constructor(private userService: UserService) { }
 
   ngOnInit(): void {
   }
 
+  createInvoice(): void {
+
+  }
+
+  checkoutPayment(): void {
+    this.paymentCheckoutList.push('');
+  }
 }

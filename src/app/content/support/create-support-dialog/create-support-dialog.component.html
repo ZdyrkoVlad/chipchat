@@ -6,15 +6,6 @@
             <form [formGroup]="supportForm" class=" ">
 
                 <mat-form-field appearance="outline" class="w-full">
-                    <mat-label>Addressee of the request </mat-label>
-                    <mat-select [(value)]="selected">
-                        <mat-option value="option1">Distributor</mat-option>
-                        <mat-option value="option2">Developer</mat-option>
-                    </mat-select>
-                </mat-form-field>
-
-
-                <mat-form-field appearance="outline" class="w-full">
                     <mat-label>Question</mat-label>
                     <input matInput formControlName="model">
                 </mat-form-field>
@@ -28,10 +19,6 @@
                     ></textarea>
                 </mat-form-field>
 
-                <div class="my-3">
-
-                </div>
-
 
             </form>
         </div>
@@ -44,5 +31,5 @@
         Cancel
     </button>
 
-    <button mat-button [mat-dialog-close]="true" mat-raised-button color="primary">Send a request</button>
+    <button mat-button [mat-dialog-close]="true" mat-raised-button color="primary" class="ml-0">Send a request</button>
 </mat-dialog-actions>

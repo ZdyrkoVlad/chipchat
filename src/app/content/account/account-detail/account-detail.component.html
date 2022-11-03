@@ -1,0 +1,53 @@
+<div class="flex flex-col justify-center h-full">
+    <mat-card class="example-card text-left w-full ">
+        <mat-card-subtitle>
+            <div class="flex flex-col justify-between text-lg lg:w-1/3">
+
+                <mat-form-field appearance="outline">
+                    <mat-label>User Name</mat-label>
+                    <input matInput placeholder="Placeholder" class="text-black" [value]="'Some Name'" [disabled]="allowEdit">
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>E-mail</mat-label>
+                    <input matInput placeholder="Placeholder" class="text-black" [value]="'email@mail.com'" [disabled]="allowEdit">
+                </mat-form-field>
+
+            </div>
+
+        </mat-card-subtitle>
+
+        <mat-card-content>
+            <div class="flex flex-col text-lg lg:w-1/3">
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Phone</mat-label>
+                    <input matInput placeholder="Placeholder" class="text-black" [value]="'+380(98)327-12-12'" [disabled]="allowEdit">
+                </mat-form-field>
+
+                <div class="flex lg:justify-start justify-between">
+                    <p class="text-lg text-gray-400 inline-block pr-2">User role</p>
+                    <p class="inline-block uppercase" style=" color:#25e485; font-size: 18px; "> DEALER</p>
+
+                </div>
+
+                <div class="flex lg:justify-start justify-between">
+                    <p class="text-lg text-gray-400 inline-block pr-2">Registered date </p>
+                    <p class="inline-block"> 8 Sep. 2021</p>
+                </div>
+                <div class="flex lg:justify-start justify-between">
+                    <p class="text-lg text-gray-400 inline-block pr-2">Money balance </p>
+                    <p class="inline-block"> 0</p>
+                </div>
+            </div>
+        </mat-card-content>
+        <mat-card-actions class="flex flex-row justify-end">
+            <button *ngIf="allowEdit" mat-raised-button color="primary" (click)="allowEdit=!allowEdit"
+            >Edit
+            </button>
+            <button *ngIf="!allowEdit" mat-raised-button color="primary" (click)="allowEdit=!allowEdit"
+            >Save
+            </button>
+        </mat-card-actions>
+    </mat-card>
+</div>

@@ -14,6 +14,6 @@ export class ChatService {
   }
 
   getChatById(id: string): Observable<any> {
-    return new BehaviorSubject(chatList.filter(chat => chat.id === id));
+    return new BehaviorSubject(chatList.filter(chat => chat.id === id).pop());
   }
 }

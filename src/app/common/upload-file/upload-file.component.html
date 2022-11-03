@@ -9,7 +9,13 @@
         <p class="">Select Files</p>
     </div>
 </div>
-<div class="grid grid-cols-5 pt-2 gap-2">
-    <img *ngFor="let url of urls" [src]="url" height="100" width="100" class="pr-2"/>
+<div class="grid lg:grid-cols-4  grid-cols-2 pt-2 gap-2">
+    <div *ngFor="let url of urls; let index = index" class="relative flex flex-row justify-center ">
+
+        <img *ngIf="url.includes('image/')" [src]="url" height="100" width="100" class="pr-2"/>
+        <img *ngIf="!url.includes('image/' )" [src]="'assets/document9.png'" height="100" width="100" class="pr-2"/>
+        <mat-icon class="cursor-pointer" (click)="deleteFromList(index)">clear</mat-icon>
+    </div>
+
 </div>
 

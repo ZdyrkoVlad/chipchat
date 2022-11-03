@@ -1,6 +1,6 @@
-  export interface Message {
+export interface Message {
   id: string;
-  authorId?: string | null;
-  text?: string;
-  createDate: string;
+  authorId: string;
+  messageText: string;
+  createDate: Date;
 }

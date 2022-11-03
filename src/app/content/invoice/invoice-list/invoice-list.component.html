@@ -1,1 +1,21 @@
-<p>invoice-list works!</p>
+<div class="text-center p-4">
+    <h1 class="italic">Invoice</h1>
+    <div class="flex justify-center flex-col lg:flex-row">
+
+        <div class="lg:w-2/3 h-full form-container">
+            <div class="flex flex-row justify-between">
+                <h3 class="text-left">Statistics and analytics all invoice</h3>
+            </div>
+
+            <div class="flex-row flex">
+                <app-search class="w-full"></app-search>
+
+            </div>
+
+            <app-invoice-list-item></app-invoice-list-item>
+            <app-invoice-list-item></app-invoice-list-item>
+            <app-invoice-list-item></app-invoice-list-item>
+        </div>
+    </div>
+</div>
+

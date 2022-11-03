@@ -1,7 +1,12 @@
-<div>
-    <div  class="flex flex-row justify-center">
-        <h2>User: User Name</h2>
+<div class="flex flex-col justify-between h-full">
+
+
+    <div class="flex flex-col">
+        <h2 class="text-center">User: {{chatData.createUserId}}</h2>
+        <h6 class="text-center">{{chatData.createDate}}</h6>
         <hr>
     </div>
-<app-chat class="lg:w-1/2 "></app-chat>
+    <div class="lg:flex lg:justify-center">
+        <app-chat class="lg:w-1/2" [chatObject]="chatData"></app-chat>
+    </div>
 </div>

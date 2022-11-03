@@ -16,7 +16,7 @@ export class ChatListItemComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.lastMessage = this.chatData.messageList?.pop()?.messageText;
+    this.lastMessage = this.chatData.messageList[this.chatData.messageList.length - 1].messageText;
   }
 
 }

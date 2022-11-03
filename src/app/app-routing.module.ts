@@ -15,23 +15,54 @@ import { SingUpComponent } from './common/sing-up/sing-up.component';
 import { SupportDetailComponent } from './content/support/support-detail/support-detail.component';
 import { TestComponent } from './common/test/test.component';
 import { InvoiceListComponent } from './content/invoice/invoice-list/invoice-list.component';
+import { AccountDetailComponent } from './content/account/account-detail/account-detail.component';
+import { PaymentDetailComponent } from './content/payment/payment-detail/payment-detail.component';
+import { LendingComponent } from './common/lending/lending.component';
+import { AuthGuard } from './guard/auth.guard';
+import { InvoiceDetailComponent } from './content/invoice/invoice-detail/invoice-detail.component';
 
 const routes: Routes = [
 
   {
-    path: 'order', component: OrderDetailComponent
+    path: 'new-order', component: NewOrderComponent,
+    data: {
+      role: ['DEALER']
+    },
   },
   {
-    path: 'new-order', component: NewOrderComponent
+    path: 'account', component: AccountDetailComponent,
+    canActivate: [AuthGuard],
+    data: {
+      role: ['DISTRIBUTOR', 'DEVELOPER', 'DEALER']
+    },
   },
   {
-    path: 'account', component: AccountComponent,
+    path: 'accounts', component: AccountComponent,
+    canActivate: [AuthGuard],
+    data: {
+      role: ['DISTRIBUTOR', 'DEVELOPER', 'DEALER']
+    },
   },
   {
-    path: 'support', component: SupportComponent
+    path: 'account/:id', component: AccountDetailComponent,
+    canActivate: [AuthGuard],
+    data: {
+      role: ['DISTRIBUTOR', 'DEVELOPER', 'DEALER']
+    },
   },
   {
-    path: 'support-detail', component: SupportDetailComponent
+    path: 'support', component: SupportComponent,
+    canActivate: [AuthGuard],
+    data: {
+      role: ['DISTRIBUTOR', 'DEVELOPER', 'DEALER']
+    },
+  },
+  {
+    path: 'support-detail', component: SupportDetailComponent,
+    canActivate: [AuthGuard],
+    data: {
+      role: ['DISTRIBUTOR', 'DEVELOPER', 'DEALER']
+    },
   },
   {
     path: 'login', component: LoginComponent
@@ -40,32 +71,79 @@ const routes: Routes = [
     path: 'sing-up', component: SingUpComponent
   },
   {
-    path: 'chat-list', component: ChatListComponent
+    path: 'chat-list', component: ChatListComponent,
+    canActivate: [AuthGuard],
+    data: {
+      role: ['DISTRIBUTOR', 'DEVELOPER', 'DEALER']
+    },
   },
   {
-    path: 'chat/:id', component: ChatDetailComponent
+    path: 'chat/:id', component: ChatDetailComponent,
+    canActivate: [AuthGuard],
+    data: {
+      role: ['DISTRIBUTOR', 'DEVELOPER', 'DEALER']
+    },
   },
   {
-    path: 'invoices', component: InvoiceListComponent
+    path: 'invoices', component: InvoiceListComponent,
+    canActivate: [AuthGuard],
+    data: {
+      role: ['DEVELOPER']
+    },
   },
   {
-    path: 'payments', component: PaymentsComponent
+    path: 'invoice/:id', component: InvoiceDetailComponent,
+    canActivate: [AuthGuard],
+    data: {
+      role: ['DEVELOPER']
+    },
+  },
+  {
+    path: 'payments', component: PaymentsComponent,
+    canActivate: [AuthGuard],
+    data: {
+      role: ['DISTRIBUTOR', 'DEALER']
+    },
+  },
+  {
+    path: 'payment-detail', component: PaymentDetailComponent,
+    canActivate: [AuthGuard],
+    data: {
+      role: ['DISTRIBUTOR', 'DEVELOPER', 'DEALER']
+    },
   },
   {
     path: 'order-list',
-    component: OrderListComponent
+    component: OrderListComponent,
+    canActivate: [AuthGuard],
+    data: {
+      role: ['DISTRIBUTOR', 'DEVELOPER', 'DEALER']
+    },
+  },
+
+  {
+    path: 'order/:id', component: OrderDetailComponent,
+    canActivate: [AuthGuard],
+    data: {
+      role: ['DISTRIBUTOR', 'DEVELOPER', 'DEALER']
+    },
   },
   {
     path: 'user-role',
     component: UserRoleComponent
   },
   {
-    path: 'test',
-    component: TestComponent
+
+    path: 'home',
+    component: OrderListComponent,
+    canActivate: [AuthGuard],
+    data: {
+      role: ['DISTRIBUTOR', 'DEVELOPER', 'DEALER']
+    },
   },
   {
     path: '',
-    component: OrderListComponent
+    component: LoginComponent,
   },
   {
     path: '**', component: ErrorPageComponent

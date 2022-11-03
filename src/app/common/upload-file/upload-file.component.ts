@@ -11,7 +11,7 @@ export class UploadFileComponent implements OnInit {
   @Output() fileEvent = new EventEmitter<any[]>();
 
   onSelectFile(event: any): void {
-    console.log('event', event);
+
     if (event.target.files && event.target.files[0]) {
       const filesAmount = event.target.files.length;
       for (let i = 0; i < filesAmount; i++) {
@@ -19,12 +19,10 @@ export class UploadFileComponent implements OnInit {
 
         reader.onload = (event1: any) => {
           this.urls.push(event1.target.result);
+          console.log(event1.target.result);
         };
-        if (event.target.files[i].type !== 'image/webp') {
-          reader.readAsDataURL(event.target.files[i]);
-        } else {
-          reader.readAsDataURL(event.target.files[i]);
-        }
+
+        reader.readAsDataURL(event.target.files[i]);
 
       }
       this.emitValue();
@@ -35,6 +33,12 @@ export class UploadFileComponent implements OnInit {
   emitValue(): void {
 
     this.fileEvent.emit(this.urls);
+  }
+
+  deleteFromList(index: number): void {
+
+    this.urls.splice(index, 1);
+    this.emitValue();
   }
 
   ngOnInit(): void {}

@@ -9,9 +9,6 @@
 
         <div class="flex-row flex ">
             <app-search class="w-full"></app-search>
-            <div class="pl-4 flex items-center cursor-pointer">
-                <mat-icon color="primary" matTooltip="Data filters">filter_list</mat-icon>
-            </div>
         </div>
         <div *ngFor="let chatElement of chatList">
             <app-chat-list-item [chatData]="chatElement"></app-chat-list-item>

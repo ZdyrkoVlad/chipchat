@@ -1,7 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -9,6 +16,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .mat-form-field-wrapper {
   padding-bottom: 5px;
 }
+
 /* width */
 ::-webkit-scrollbar {
   width: 2px;
@@ -31,7 +39,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   background: black;
 }
 
-
-.text-align-end{
+.text-align-end {
   text-align: end
 }

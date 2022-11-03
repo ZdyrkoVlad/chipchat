@@ -75,11 +75,8 @@
                 ></textarea>
             </mat-form-field>
 
-            <div class="my-3">
-                <!--                <button class="w-full" mat-raised-button color="primary" (click)="attachFile()">-->
-                <!--                    Add file-->
-                <!--                </button>-->
-                <app-upload-file (fileEvent)="attachFile($event)"></app-upload-file>
+            <div class="my-3 ">
+                <app-upload-file (fileEvent)="attachFile($event)" ></app-upload-file>
             </div>
 
             <div class="" *ngIf="filesList.length!==0">

@@ -1,0 +1,32 @@
+<h2 mat-dialog-title class="text-center">Filters</h2>
+<mat-dialog-content class="mat-typography">
+    <div class="text-center ">
+        <div class="flex justify-center h-full">
+
+            <form >
+
+                <mat-form-field appearance="outline" class="w-full">
+                    <mat-label>User role</mat-label>
+                    <mat-select  [(ngModel)]="selectedUserRole" [ngModelOptions]="{standalone: true}">
+                        <mat-option [value]="'DEVELOPER'">
+                            DEVELOPER
+                        </mat-option>
+                        <mat-option [value]="'DISTRIBUTOR'">
+                            DISTRIBUTOR
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+            </form>
+        </div>
+    </div>
+
+</mat-dialog-content>
+<mat-dialog-actions class="flex flex-row justify-between">
+
+    <button mat-button mat-dialog-close mat-raised-button>
+        Cancel
+
+    </button>
+    <button mat-button [mat-dialog-close]="true" mat-raised-button color="primary" class="ml-0">Set filter</button>
+</mat-dialog-actions>

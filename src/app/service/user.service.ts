@@ -17,4 +17,8 @@ export class UserService {
   }
 
   constructor() { }
+
+  clearRole(): void {
+    localStorage.removeItem('role');
+  }
 }

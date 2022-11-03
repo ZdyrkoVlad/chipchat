@@ -55,7 +55,7 @@ export class NewOrderComponent implements OnInit {
   }
 
   attachFile(event: any): void {
-    this.filesList.push('1');
+    this.filesList = event;
   }
 
   onSubmit(): void {

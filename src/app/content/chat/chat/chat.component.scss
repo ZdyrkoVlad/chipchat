@@ -4,12 +4,15 @@
   flex-grow: 1;
   padding: 16px;
   overflow: auto;
-  max-height: calc(84vh - 30px);
+  max-height: calc(82vh - 30px);
+  min-height: calc(82vh - 30px);
   @media (max-width: 1020px) {
     max-height: 65vh;
+    min-height: 65vh;
   }
   @media (max-width: 320px) {
     max-height: 54vh;
+    min-height: 54vh;
   }
 
 }

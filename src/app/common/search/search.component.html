@@ -1,8 +1,14 @@
-<mat-form-field class="w-full lg:px-0" appearance="outline">
-    <span matPrefix> </span>
-    <input type="tel" matInput placeholder="Search" class="border-black" name="search">
-    <div matSuffix class="px-0">
-        <mat-icon>search</mat-icon>
-    </div>
+<div class="flex flex-row">
+    <mat-form-field class="w-full lg:px-0" appearance="outline">
+        <span matPrefix> </span>
+        <input type="tel" matInput placeholder="Search" class="border-black" name="search">
+        <div matSuffix class="px-0">
+            <mat-icon>search</mat-icon>
+        </div>
 
-</mat-form-field>
+
+    </mat-form-field>
+    <div *ngIf="filterFlag" class="pl-4 flex items-center cursor-pointer" (click)="setFilter()">
+        <mat-icon color="primary" matTooltip="Data filters">filter_list</mat-icon>
+    </div>
+</div>

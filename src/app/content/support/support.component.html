@@ -7,7 +7,7 @@
                 <h3 class="text-left">You can ask a question to your distributor or developer</h3>
             </div>
 
-            <div class="my-3">
+            <div class="my-3" *ngIf="userRole === roleEnum.DEALER">
                 <button class="w-full" mat-raised-button color="primary" (click)="createSupportChat()">
                     Create new chat
                 </button>
@@ -15,9 +15,7 @@
 
             <div class="flex-row flex ">
                 <app-search class="w-full"></app-search>
-                <div class="pl-4 flex items-center cursor-pointer">
-                    <mat-icon color="primary" matTooltip="Data filters">filter_list</mat-icon>
-                </div>
+
             </div>
 
 

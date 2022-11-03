@@ -4,13 +4,14 @@
             <mat-card-content>
                 <mat-card-subtitle>
                     Status <p
-                        style="display: inline-block; color:#02970aad; font-size: 18px; text-transform:uppercase;">
-                    Active</p>
+
+                        [ngClass]="{'greenStatus': order.orderStatus==='IN PROGRESS', 'redStatus': order.orderStatus==='CANCELED'}">
+                    {{order.orderStatus}}</p>
                 </mat-card-subtitle>
 
                 <mat-card-title class="text-lg cursor-pointer" routerLink="/order">Car:
-                    Audi SQ7 4.0 TDI tiptronic
-                    quattro (435 hp)
+                    {{order.orderData.mark + ' ' + order.orderData.model + ' ' + order.orderData.generation }}
+
 
                 </mat-card-title>
                 <div (click)="changeStatusSize()" *ngIf="!statusMaxSize && width<1024"
@@ -22,11 +23,11 @@
                     <div class="flex flex-col text-lg">
                         <div class="flex lg:justify-start justify-between">
                             <p class="text-lg text-gray-400 inline-block pr-2">Order id</p>
-                            <p class="inline-block"> 12152</p>
+                            <p class="inline-block"> {{order.id}}</p>
                         </div>
                         <div class="flex lg:justify-start justify-between">
                             <p class="text-lg text-gray-400 inline-block pr-2">VIN</p>
-                            <p class="inline-block"> WAUZZZ4M1JD050072</p>
+                            <p class="inline-block">  {{order.orderData.vinNumber}}</p>
                         </div>
                         <div class="flex lg:justify-start justify-between">
                             <p class="text-lg text-gray-400 inline-block pr-2">Price</p>
@@ -34,8 +35,19 @@
                         </div>
                         <div class="flex lg:justify-start justify-between">
                             <p class="text-lg text-gray-400 inline-block pr-2">Create date</p>
-                            <p class="inline-block"> Nov 23, 2021</p>
+                            <p class="inline-block"> {{order.createDate}}</p>
                         </div>
+
+                        <div class=" text-center pb-4" *ngIf="this.userRole === roleEnum.DEVELOPER">
+                            <app-upload-file></app-upload-file>
+                        </div>
+
+                        <div *ngIf="this.userRole === roleEnum.DEVELOPER && this.order.orderStatus!=='CANCELED'">
+                            <button class="w-full" mat-raised-button color="primary" (click)="backToStock()">Back to
+                                stock
+                            </button>
+                        </div>
+
                     </div>
                     <div (click)="changeStatusSize()" *ngIf="statusMaxSize && width<1024"
                          class="flex flex-row justify-center">
@@ -48,7 +60,7 @@
 
     <div class="px-4 pt-2 lg:w-1/2 ">
 
-        <app-chat [standAlone]="false"></app-chat>
+        <app-chat [standAlone]="false" [chatObject]="chat"></app-chat>
 
     </div>
 </div>

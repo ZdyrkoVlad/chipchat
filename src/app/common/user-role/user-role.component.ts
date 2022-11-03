@@ -18,11 +18,15 @@ export class UserRoleComponent implements OnInit {
   constructor(private userService: UserService) { }
 
   ngOnInit(): void {
-    console.log(this.roleEnum);
+
   }
 
   setAutRole(userRole: role): void {
     this.userService.role = userRole;
+  }
+
+  clearRole(): void {
+    this.userService.clearRole();
   }
 
 }

@@ -3,18 +3,16 @@
     <div class="flex justify-center flex-col lg:flex-row">
 
         <div class="lg:w-2/3 h-full form-container">
-            <div class="flex flex-row justify-between">
-                <h3 class="text-left">See all information about the account</h3>
+            <app-account-detail ></app-account-detail>
+            <div class="flex flex-row justify-between pt-10">
+                <h3 class="text-left">See  information about the dealer in the table</h3>
             </div>
 
-            <div class="flex-row flex ">
-                <app-search class="w-full"></app-search>
-                <div class="pl-4 flex items-center cursor-pointer">
-                    <mat-icon color="primary" matTooltip="Data filters">filter_list</mat-icon>
-                </div>
-            </div>
-            <app-account-list-item></app-account-list-item>
         </div>
     </div>
 </div>
+<div class="lg:px-12 pb-4 flex-row justify-center">
+    <app-account-table></app-account-table>
+</div>
+
 

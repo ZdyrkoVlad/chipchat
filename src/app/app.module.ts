@@ -24,6 +24,7 @@ import { ChatComponent } from './content/chat/chat/chat.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 import { LendingComponent } from './common/lending/lending.component';
 import { LoginComponent } from './common/login/login.component';
@@ -34,7 +35,6 @@ import { ScreenService } from './service/screen.service';
 import { PaymentListComponent } from './content/payment/payment-list/payment-list.component';
 import { PaymentListItemComponent } from './content/payment/payment-list-item/payment-list-item.component';
 import { PaymentDetailComponent } from './content/payment/payment-detail/payment-detail.component';
-import { PaymentModuleComponent } from './content/payment/payment-module/payment-module.component';
 import { ChatDetailComponent } from './content/chat/chat-detail/chat-detail.component';
 import { AttachFileDialogComponent } from './common/attach-file-dialog/attach-file-dialog.component';
 import { UserRoleComponent } from './common/user-role/user-role.component';
@@ -57,6 +57,9 @@ import { UploadFileComponent } from './common/upload-file/upload-file.component'
 import { InvoiceListComponent } from './content/invoice/invoice-list/invoice-list.component';
 import { InvoiceListItemComponent } from './content/invoice/invoice-list-item/invoice-list-item.component';
 import { InvoiceDetailComponent } from './content/invoice/invoice-detail/invoice-detail.component';
+import { AccountDetailComponent } from './content/account/account-detail/account-detail.component';
+import { AccountTableComponent } from './common/account-table/account-table.component';
+import { FilterDialogComponent } from './common/filter-dialog/filter-dialog.component';
 
 @NgModule({
   declarations: [
@@ -78,7 +81,6 @@ import { InvoiceDetailComponent } from './content/invoice/invoice-detail/invoice
     PaymentListComponent,
     PaymentListItemComponent,
     PaymentDetailComponent,
-    PaymentModuleComponent,
     ChatDetailComponent,
     AttachFileDialogComponent,
     UserRoleComponent,
@@ -93,6 +95,10 @@ import { InvoiceDetailComponent } from './content/invoice/invoice-detail/invoice
     InvoiceListComponent,
     InvoiceListItemComponent,
     InvoiceDetailComponent,
+    AccountDetailComponent,
+    AccountTableComponent,
+    FilterDialogComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -114,7 +120,7 @@ import { InvoiceDetailComponent } from './content/invoice/invoice-detail/invoice
     MatPaginatorModule,
     MatSortModule,
     MatTreeModule,
-
+    MatCheckboxModule
   ],
   providers: [ScreenService, UserService],
   bootstrap: [AppComponent]

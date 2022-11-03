@@ -4,7 +4,7 @@
 
         <div class="lg:w-2/3 h-full form-container">
             <div class="flex flex-row justify-between">
-                <h3 class="text-left">See all information about the your orders</h3>
+                <h3 class="text-left mb-0">See all information about the your orders</h3>
                 <div>
                     <button *ngIf="userRole!==roleEnum.DEVELOPER" mat-raised-button color="primary"
                             routerLink="/new-order">New order
@@ -13,16 +13,12 @@
             </div>
 
             <div class="flex-row flex ">
-                <app-search class="w-full"></app-search>
-                <div class="pl-4 flex items-center cursor-pointer">
-                    <mat-icon color="primary" matTooltip="Data filters">filter_list</mat-icon>
-                </div>
+                <app-search class="w-full" ></app-search>
+
             </div>
 
-            <app-order-list-item></app-order-list-item>
-            <app-order-list-item></app-order-list-item>
-            <app-order-list-item></app-order-list-item>
-            <app-order-list-item></app-order-list-item>
+            <app-order-list-item *ngFor="let order of orderList" [order]="order"></app-order-list-item>
+
         </div>
     </div>
 </div>
