@@ -6,7 +6,7 @@
                 {{order.orderStatus}}</p>
             </div>
 
-            <div class="flex flex-row items-center">
+            <div class="flex flex-row items-center" *ngIf="userRole!==roleEnum.DEALER">
                 <div class="pr-2">Created by</div>
                 <div class="inline-block font-bold text-xl text-purple-600">
                     {{order.createdUserID}}
