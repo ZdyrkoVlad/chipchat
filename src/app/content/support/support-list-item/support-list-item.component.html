@@ -8,18 +8,18 @@
     <mat-card-title class="text-lg ">
         <div class="flex-row flex justify-between lg:justify-start gap-2">
             <p>ID </p>
-            <p>A123</p>
+            <p>{{supportData.id}}</p>
         </div>
         <div class="lg:flex-row flex-col flex gap-2">
             <p class="text-gray-300 text-lg">Question:</p>
-            <p>Can we add mock previous UI?</p>
+            <p>{{supportData.question}}</p>
         </div>
     </mat-card-title>
 
     <mat-card-content>
         <div class="lg:flex-row flex-col flex gap-2">
             <p class="text-gray-300"> Last message:</p>
-            <p> Okey we can do this, but we wood do this in the next stage</p>
+            <p> {{lastMessage}}</p>
 
         </div>
 
@@ -28,10 +28,11 @@
             <div class="flex flex-row items-center">
                 <div class="pr-2">Created by</div>
                 <div class="inline-block font-bold text-xl text-purple-600">
-                    User Name
+                    {{supportData.createUserId}}
                 </div>
             </div>
-            <button mat-raised-button color="primary" routerLink="/support-detail">View</button>
+            <button mat-raised-button color="primary" [routerLink]="['/support-detail', this.supportData.id]">View
+            </button>
         </div>
 
     </mat-card-content>

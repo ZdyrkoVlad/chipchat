@@ -18,8 +18,6 @@ import { role } from '../../../dao/role';
 export class OrderDetailComponent implements OnInit, OnDestroy {
   roleEnum = role;
 
-  private destroyed$: ReplaySubject<boolean> = new ReplaySubject(1);
-
   statusMaxSize = true;
   width: number = 0;
 
@@ -30,12 +28,19 @@ export class OrderDetailComponent implements OnInit, OnDestroy {
     return this.userService.role;
   }
 
+  private destroyed$: ReplaySubject<boolean> = new ReplaySubject(1);
+
   constructor(private screenService: ScreenService,
               private orderService: OrderService,
               private activateRoute: ActivatedRoute,
               private chatService: ChatService,
               private userService: UserService,
   ) {}
+
+  ngOnDestroy(): void {
+    this.destroyed$.next(true);
+    this.destroyed$.complete();
+  }
 
   ngOnInit(): void {
     [this.width] = this.screenService.onWindowResize();
@@ -49,11 +54,6 @@ export class OrderDetailComponent implements OnInit, OnDestroy {
         this.chat = data;
       });
     });
-  }
-
-  ngOnDestroy(): void {
-    this.destroyed$.next(true);
-    this.destroyed$.complete();
   }
 
   changeStatusSize(): void {

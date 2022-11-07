@@ -8,18 +8,44 @@
                         DISTRIBUTOR</p>
 
                 </mat-card-subtitle>
+                <div (click)="changeStatusSize()" *ngIf="!statusMaxSize && width<1024"
+                     class="flex flex-row justify-center">
+                    <mat-icon>keyboard_arrow_down</mat-icon>
+                </div>
+                <mat-card-title class="text-lg cursor-pointer text-center lg:text-left flex-col justify-between"
+                                *ngIf="statusMaxSize">
+                    <div>
+                        <div>
+                            <p class="text-gray-300">Question</p>
+                            <p class="font-light text-left">{{support.question}}</p>
+                            <p class="text-gray-300">Main text Request</p>
+                            <p class="font-light text-left">{{support.textRequest}}</p>
+                        </div>
 
-                <mat-card-title class="text-lg cursor-pointer text-center lg:text-left"     >
-                    Can we add mock previous UI?
+                        <div class="flex-row flex justify-between ">
+                            <p>Create by: {{support.createUserId}}</p>
+
+                        </div>
+
+                        <div class="flex lg:justify-start justify-between">
+                            <p class="text-lg text-gray-400 inline-block pr-2">Create date</p>
+                            <p class="inline-block"> {{support.createDate}}</p>
+                        </div>
+
+                    </div>
 
                 </mat-card-title>
+                <div (click)="changeStatusSize()" *ngIf="statusMaxSize && width<1024"
+                     class="flex flex-row justify-center">
+                    <mat-icon>keyboard_arrow_up</mat-icon>
+                </div>
             </mat-card-content>
         </mat-card>
     </div>
 
     <div class=" pt-2 lg:w-1/2 ">
 
-        <app-chat [standAlone]="false"></app-chat>
+        <app-chat [standAlone]="false" [chatObject]="chat"></app-chat>
 
     </div>
 </div>

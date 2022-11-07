@@ -58,7 +58,7 @@ const routes: Routes = [
     },
   },
   {
-    path: 'support-detail', component: SupportDetailComponent,
+    path: 'support-detail/:id', component: SupportDetailComponent,
     canActivate: [AuthGuard],
     data: {
       role: ['DISTRIBUTOR', 'DEVELOPER', 'DEALER']
