@@ -13,7 +13,6 @@ export class AuthGuard implements CanActivate, CanActivateChild {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    console.log(route.data);
     return this.checkUserRole(route);
   }
 
@@ -26,9 +25,8 @@ export class AuthGuard implements CanActivate, CanActivateChild {
   checkUserRole(route: ActivatedRouteSnapshot): boolean {
     const allowedRole: role[] = route.data.role;
 
-    console.log('this.userService.role', this.userService.role);
     if (this.userService.role === null) {
-      console.log(this.userService.role);
+
       // this.router.navigate(['/']);
       return false;
     }

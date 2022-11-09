@@ -9,9 +9,9 @@ import { UserService } from '../../../service/user.service';
 })
 export class PaymentListComponent implements OnInit {
   roleEnum = role;
-  // checkoutActivate = false;
+  checkoutActivate = false;
 
-  paymentCheckoutList: string[] = [];
+  checkoutActivateList: boolean[] = [false, false, false];
 
   get userRole(): role | undefined {
     return this.userService.role;
@@ -26,7 +26,8 @@ export class PaymentListComponent implements OnInit {
 
   }
 
-  checkoutPayment(): void {
-    this.paymentCheckoutList.push('');
+  toggleTest(index: number): void {
+    this.checkoutActivateList[index] = !this.checkoutActivateList[index];
+    this.checkoutActivate = this.checkoutActivateList.find(element => element === true) ? true : false;
   }
 }
