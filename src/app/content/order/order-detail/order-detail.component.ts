@@ -23,6 +23,10 @@ export class OrderDetailComponent implements OnInit, OnDestroy {
 
   order!: Order;
   chat!: Chat;
+  chatWithDeveloper!: Chat;
+
+  openSendFilesHistory = false;
+  openReceiveFilesHistory = false;
 
   get userRole(): role | undefined {
     return this.userService.role;

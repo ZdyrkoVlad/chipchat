@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -120,7 +122,9 @@ import { FilterDialogComponent } from './common/filter-dialog/filter-dialog.comp
     MatPaginatorModule,
     MatSortModule,
     MatTreeModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatTabsModule,
+    MatExpansionModule
   ],
   providers: [ScreenService, UserService],
   bootstrap: [AppComponent]
