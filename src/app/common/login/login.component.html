@@ -1,26 +1,55 @@
 <div class="flex flex-row justify-around">
-<mat-card class="mt-custom lg:w-1/3">
-    <mat-card-title class="text-center">Login</mat-card-title>
-    <mat-card-content>
-        <form [formGroup]="formLogin" (ngSubmit)="submit()">
-            <mat-form-field appearance="outline" class="w-full">
-                <mat-label>Username</mat-label>
-                <input matInput >
-            </mat-form-field>
+    <mat-card class="mt-custom lg:w-1/3">
+        <mat-card-title class="text-center">Login</mat-card-title>
+        <mat-card-content>
+            <form [formGroup]="formLogin" (ngSubmit)="submit()">
+                <mat-form-field appearance="outline" class="w-full">
+                    <mat-label>Username</mat-label>
+                    <input matInput>
+                </mat-form-field>
 
-            <mat-form-field appearance="outline" class="w-full">
-                <mat-label>Password</mat-label>
-                <input matInput >
-            </mat-form-field>
+                <mat-form-field appearance="outline" class="w-full">
+                    <mat-label>Password</mat-label>
+                    <input matInput>
+                </mat-form-field>
 
-            <p *ngIf="error" class="error">
-                {{ error }}
-            </p>
+                <p *ngIf="error" class="error">
+                    {{ error }}
+                </p>
 
-            <div class="lg:flex lg:justify-around">
-                <button type="submit" class="lg:w-1/4 w-full" mat-raised-button color="primary" [routerLink]="['/user-role']" >Login</button>
-            </div>
-        </form>
-    </mat-card-content>
-</mat-card>
+                <div class="lg:flex lg:justify-around">
+                    <button type="submit" class="lg:w-1/4 w-full" mat-raised-button color="primary"
+                            [routerLink]="['/user-role']">Login
+                    </button>
+                </div>
+
+                <div class="form-group">
+                    <div class="alert alert-danger" role="alert" *ngIf="isLoginFailed">Login
+                        failed: {{ errorMessage }}</div>
+                </div>
+                <div class="form-group">
+                    <p class="content-divider text-center mt-3">
+                        <span>or</span>
+                        Sign in with:
+                    </p>
+
+                    <p class="social-login flex flex-row justify-center">
+
+                        <a href="{{ googleURL }}" class="ml-2">
+                            <img alt="Login with Google" src="/assets/img/google.png" class="btn-img">
+                        </a>
+                        <a href="{{ facebookURL }}">
+                            <img alt="Login with Facebook" src="/assets/img/facebook.png" class="btn-img">
+                        </a>
+                        <a href="{{ githubURL }}">
+                            <img alt="Login with Github" src="/assets/img/github.png" class="btn-img">
+                        </a>
+                        <a href="{{ linkedinURL }}">
+                            <img alt="Login with Linkedin" src="/assets/img/linkedin.png" class="btn-img-linkedin">
+                        </a>
+                    </p>
+                </div>
+            </form>
+        </mat-card-content>
+    </mat-card>
 </div>

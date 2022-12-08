@@ -8,6 +8,13 @@ import { role } from './dao/role';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
+  private roles!: string[];
+  isLoggedIn = false;
+  showAdminBoard = false;
+  showModeratorBoard = false;
+  username!: string;
+
+
   title = 'chipchat';
 
   get userRole(): role | undefined {
@@ -19,13 +26,13 @@ export class AppComponent implements OnInit {
   public getScreenWidth: any;
   public getScreenHeight: any;
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.getScreenWidth = window.innerWidth;
     this.getScreenHeight = window.innerHeight;
   }
 
   @HostListener('window:resize', ['$event'])
-  onWindowResize() {
+  onWindowResize(): void {
     this.getScreenWidth = window.innerWidth;
     this.getScreenHeight = window.innerHeight;
   }

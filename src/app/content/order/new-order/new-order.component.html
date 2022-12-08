@@ -75,8 +75,19 @@
                 ></textarea>
             </mat-form-field>
 
+            <section class="example-section">
+                <mat-checkbox class="example-margin" [(ngModel)]="additionalOption" [ngModelOptions]="{standalone: true}">Include additional option</mat-checkbox>
+            </section>
+            <mat-form-field *ngIf="additionalOption" class="w-full " appearance="outline">
+                <mat-label>Enter what additional option do you want</mat-label>
+                <textarea class="" matInput cdkTextareaAutosize cdkAutosizeMaxRows="20"
+                          formControlName="additionalOption"
+                ></textarea>
+            </mat-form-field>
+
+
             <div class="my-3 ">
-                <app-upload-file (fileEvent)="attachFile($event)" ></app-upload-file>
+                <app-upload-file (fileEvent)="attachFile($event)"></app-upload-file>
             </div>
 
             <div class="" *ngIf="filesList.length!==0">

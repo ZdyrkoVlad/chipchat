@@ -31,7 +31,7 @@ export class NewOrderComponent implements OnInit {
   ];
 
   filesList: any[] = [];
-
+  additionalOption: boolean = false;
   orderForm: FormGroup = new FormGroup({
     mark: new FormControl('', [Validators.required]),
     model: new FormControl('', [Validators.required]),
@@ -45,6 +45,7 @@ export class NewOrderComponent implements OnInit {
     additionalInfo: new FormControl('', [Validators.required]),
     phone: new FormControl('', [Validators.required]),
     userName: new FormControl('', [Validators.required]),
+    additionalOption: new FormControl(''),
     file: new FormControl(''),
   });
 

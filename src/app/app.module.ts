@@ -62,6 +62,7 @@ import { InvoiceDetailComponent } from './content/invoice/invoice-detail/invoice
 import { AccountDetailComponent } from './content/account/account-detail/account-detail.component';
 import { AccountTableComponent } from './common/account-table/account-table.component';
 import { FilterDialogComponent } from './common/filter-dialog/filter-dialog.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -124,7 +125,8 @@ import { FilterDialogComponent } from './common/filter-dialog/filter-dialog.comp
     MatTreeModule,
     MatCheckboxModule,
     MatTabsModule,
-    MatExpansionModule
+    MatExpansionModule,
+    HttpClientModule
   ],
   providers: [ScreenService, UserService],
   bootstrap: [AppComponent]

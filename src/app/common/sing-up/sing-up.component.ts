@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from '../../service/auth.service';
 
 @Component({
   selector: 'app-sing-up',
@@ -11,14 +12,19 @@ export class SingUpComponent implements OnInit {
 
   @Output() submitEM = new EventEmitter();
 
+  isSuccessful = false;
+  isSignUpFailed = false;
+  errorMessage = '';
+
   formRegistration: FormGroup = new FormGroup({
-    username: new FormControl('', [Validators.required]),
+    displayName: new FormControl('', [Validators.required]),
     password: new FormControl('', [Validators.required]),
+    matchingPassword: new FormControl('', [Validators.required]),
     email: new FormControl('', [Validators.required, Validators.email]),
     phone: new FormControl('', [Validators.required])
   });
 
-  constructor() { }
+  constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
   }
@@ -27,6 +33,32 @@ export class SingUpComponent implements OnInit {
     if (this.formRegistration.valid) {
       this.submitEM.emit(this.formRegistration.value);
     }
+  }
+
+  onSubmit(): void {
+    if (this.formRegistration.valid) {
+
+      const userData = {
+        displayName: this.formRegistration.value.displayName,
+        email: this.formRegistration.value.email,
+        password: this.formRegistration.value.password,
+        matchingPassword: this.formRegistration.value.matchingPassword,
+        role: 'ROLE_DEALER'
+      };
+
+      this.authService.register(userData).subscribe(
+        data => {
+          console.log(data);
+          this.isSuccessful = true;
+          this.isSignUpFailed = false;
+        },
+        err => {
+          this.errorMessage = err.error.message;
+          this.isSignUpFailed = true;
+        }
+      );
+    }
+
   }
 
 }

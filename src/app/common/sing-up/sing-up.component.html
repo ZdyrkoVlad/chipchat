@@ -2,10 +2,10 @@
     <mat-card class="mt-custom lg:w-1/3">
         <mat-card-title class="text-center">Registration</mat-card-title>
         <mat-card-content>
-            <form [formGroup]="formRegistration" (ngSubmit)="submit()">
+            <form [formGroup]="formRegistration" (ngSubmit)="onSubmit()">
                 <mat-form-field appearance="outline" class="w-full">
                     <mat-label>Username</mat-label>
-                    <input matInput formControlName="username">
+                    <input matInput formControlName="displayName">
                 </mat-form-field>
 
                 <mat-form-field appearance="outline" class="w-full">
@@ -22,6 +22,10 @@
                     <mat-label>Password</mat-label>
                     <input matInput formControlName="password">
                 </mat-form-field>
+                <mat-form-field appearance="outline" class="w-full">
+                    <mat-label>Replay password</mat-label>
+                    <input matInput formControlName="matchingPassword">
+                </mat-form-field>
 
                 <p *ngIf="error" class="error">
                     {{ error }}
@@ -31,6 +35,10 @@
                     <button type="submit" class="lg:w-1/4 w-full" mat-raised-button color="primary">Sing up</button>
                 </div>
             </form>
+            <div class="text-center" *ngIf="isSignUpFailed">
+                Signup failed!<br />{{ errorMessage }}
+            </div>
+            <div class="text-center" *ngIf="isSuccessful">Your registration is successful!</div>
         </mat-card-content>
     </mat-card>
 </div>
